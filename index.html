@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhames Martin - Portfolio</title>
+    <link rel="stylesheet" href="main.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS styling -->
+    <style>
+ body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    /* Dark background */
+    color: #e0e0e0;
+    padding: 20px;
+}
+
+#contact-container {
+    background: #1e1e1e;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+    width: 100%;
+    margin: 20px auto; /* Center the form container */
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 2px solid #03a9f4;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background: #2a2a2a;
+    color: #e0e0e0;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #0288d1;
+    outline: none;
+}
+
+#my-form-button {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 25px;
+}
+
+#my-form-button:hover {
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    transform: scale(1.05);
+}
+
+#my-form-status {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    color: #03a9f4;
+    transition: color 0.3s ease;
+}
+
+#logo a {
+    text-decoration: none;
+    color: #03a9f4;
+}
+
+#logo a:hover {
+    color: #0288d1;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 70em;
+}
+
+@media screen and (max-width: 1680px) {
+    .container {
+        width: 68em;
+    }
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 20px;
+}
+
+p.subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #03a9f4;
+}
+
+img.profile-img {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #03a9f4;
+}
+
+.btn-primary {
+    display: block;
+    margin: 20px auto; /* Center the button */
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border: none;
+    padding: 15px 40px; /* Longer button */
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0, 114, 255, 0.5);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 114, 255, 0.7);
+}
+
+.skills-list {
+    margin-top: 20px;
+}
+
+.skills-list li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.skills-list li:before {
+    content: "\2022";
+    color: #03a9f4;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    border-radius: 25px;
+}
+
+.portfolio-item .description {
+    margin-top: 10px;
+}
+
+.contact-form {
+    display: none;
+    margin-top: 30px;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+.invalid-feedback {
+    display: none;
+    color: red;
+}
+
+.is-invalid {
+    border-color: red;
+}
+
+/* Animation */
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .btn-primary {
+        padding: 15px 20px; /* Adjust padding for smaller screens */
+        font-size: 16px;
+    }
+
+    #contact-container {
+        padding: 20px 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <section id="header" style="background-color: #121212;">
+        <!-- Logo -->
+        <h1 id="logo"><a href="#">JHAMES MARTIN</a></h1>
+    </section>
+
+    <div class="content">
+        <p class="subtitle">Front-end Developer | Graphic Designer</p>
+        <img src="jrm.jpg" class="profile-img" alt="Jhames Martin">
+        <p class="subtitle">Hello, I'm Jhames Martin, a passionate front-end developer and graphic designer. I am making visually stunning images that bring ideas to life.</p>
+        <h3>Skills:</h3>
+        <ul class="skills-list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Bootstrap</li>
+            <li>Adobe Photoshop</li>
+            <li>Mobile Editing</li>
+            <li>Video Editing</li>
+        </ul>
+
+        <!-- Button to toggle between sections -->
+        <button id="toggle-form" class="btn btn-primary">Contact Me</button>
+
+        <!-- Contact form -->
+        <div id="contact-container" class="contact-form">
+            <form id="my-form" action="https://formspree.io/f/xvoelnaa" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button id="my-form-button" style="border-radius: 15px;">Submit</button>
+                <p id="my-form-status"></p>
+            </form>
+        </div>
+
+        <script>
+            var form = document.getElementById("my-form");
+
+            async function handleSubmit(event) {
+                event.preventDefault();
+                var status = document.getElementById("my-form-status");
+                var data = new FormData(event.target);
+                fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        status.innerHTML = "Thanks for your submission!";
+                        form.reset()
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                            } else {
+                                status.innerHTML = "Oops! There was a problem submitting your form"
+                            }
+                        })
+                    }
+                }).catch(error => {
+                    status.innerHTML  = "Oops! There was a problem submitting your form";
+                });
+            }
+            form.addEventListener("submit", handleSubmit);
+
+            var formContainer = document.getElementById("contact-container");
+            var toggleButton = document.getElementById("toggle-form");
+
+            // Button click event to toggle form visibility
+            toggleButton.addEventListener("click", function() {
+                if (formContainer.style.display === "none" || formContainer.style.display === "") {
+                    // Show form
+                    formContainer.style.display = "block";
+                    formContainer.classList.add("fade-in");
+                    formContainer.classList.remove("fade-out");
+                    toggleButton.innerText = "Close";
+                } else {
+                    // Hide form
+                    formContainer.classList.add("fade-out");
+                    formContainer.classList.remove("fade-in");
+                    setTimeout(function() {
+                        formContainer.style.display = "none";
+                    }, 500); // Same duration as the fade-out animation
+                    toggleButton.innerText = "Contact Me";
+                }
+            });
+
+(function() {
+            // Disable right-click context menu
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+
+            // Disable text selection
+            document.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+            });
+
+            // Disable specific key combinations
+            document.addEventListener('keydown', function(e) {
+                // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S, Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+Shift+C
+                if (e.key === 'F12' ||
+                    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+                    (e.ctrlKey && e.key === 'U') ||
+                    (e.ctrlKey && e.key === 'S') ||
+                    (e.ctrlKey && e.key === 'C') ||
+                    (e.ctrlKey && e.key === 'V') ||
+                    (e.ctrlKey && e.key === 'X') ||
+                    (e.ctrlKey && e.shiftKey && e.key === 'C')) {
+                    e.preventDefault();
+                }
+            });
+
+            // Detect if developer tools are open
+            const element = new Image();
+            Object.defineProperty(element, 'id', {
+                get: function() {
+                    alert('Developer tools are open. Please close them to continue.');
+                    throw new Error('DevTools detected');
+                }
+            });
+
+            setInterval(function() {
+                console.dir(element);
+            }, 1000);
+
+            // Continuously break debugger
+            setInterval(function() {
+                debugger;
+            }, 100);
+
+            // Prevent framing
+            if (self === top) {
+                document.documentElement.style.display = 'block';
+            } else {
+                top.location = self.location;
+            }
+        })();
+        </script>
+    </div>
+</body>
+
+</html>
